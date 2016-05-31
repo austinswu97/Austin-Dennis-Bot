@@ -60,7 +60,7 @@ def send_message(recipientID, text):
     url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + ac_token
 
 
-    data_1 = {'recipient': { 'id': recipientID }, 'message': {'text': 'yahoo'} }
+    data_1 = {'recipient': { 'id': recipientID }, 'message': {'text': '出来た'} }
 
     data_2 = {'recipient': { 'id': recipientID }, 
             "message": {
