@@ -35,7 +35,7 @@ def webhook_authorize(request):
 
     print vtoken
 
-    if (vtoken != None and vtoken == 'dennis_test_verify_token'):
+    if (vtoken != None and vtoken == 'austinawesome'):
         return HttpResponse(request.GET['hub.challenge'])
     else:
         return HttpResponse("Error, wrong validation token")
