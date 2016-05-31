@@ -55,12 +55,13 @@ def webhook_process_message(request):
 def send_message(recipientID, text):
     print "sending a message to " + recipientID + " with origianl text=" + text
 
-    ac_token = "EAAG44FaYQtQBAFWmt3wxGHFRE9HMEJymZBFLWPQoSEDPp9WUdPBM0wqGIwSgXKKRtYj49NkBXK66eGdmgN5PUZB7gX8CtneI4dwL991TuxZALw1b8KPs04GibQsBi9d0GG0U8eoIoyq2bpYA2b5s3E2o7rESBZB6DLRl3LJ5AgZDZD"
+    ac_token = "EAADPXC2ERHUBAOLhhivVgZCEEBNwLA03yZANp0kWDyt5CLaZB5ZCOJIb6eawxXveK1yYhWknwof2G7Wi8pE866QEvISAIcsMOG87CKjJS4Hf9pMhUwnoAGX9ohDLHRSg7L9cEcyTO1ZCgMEXqE9rhu7NFnZB9gLL7Ud3eyXvTN1QZDZD"
 
     url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + ac_token
 
 
-    data_1 = {'recipient': { 'id': recipientID }, 'message': {'text': 'Echo: We did it'} }
+    data_1 = {'recipient': { 'id': recipientID }, 'message': {'text': 'yahoo'} }
+
     data_2 = {'recipient': { 'id': recipientID }, 
             "message": {
                 "attachment":{
@@ -100,7 +101,7 @@ def send_message(recipientID, text):
   }
 }
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-    r = requests.post(url, data=json.dumps(data_3), headers=headers)
+    r = requests.post(url, data=json.dumps(data_1), headers=headers)
     
     print r
     return 
