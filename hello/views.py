@@ -1,6 +1,5 @@
-# page access token for "test test test"
-# EAAG44FaYQtQBAFWmt3wxGHFRE9HMEJymZBFLWPQoSEDPp9WUdPBM0wqGIwSgXKKRtYj49NkBXK66eGdmgN5PUZB7gX8CtneI4dwL991TuxZALw1b8KPs04GibQsBi9d0GG0U8eoIoyq2bpYA2b5s3E2o7rESBZB6DLRl3LJ5AgZDZD
-#
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -17,7 +16,7 @@ def index(request):
     #return render(request, 'index.html')
     r = requests.get('http://httpbin.org/status/418')
     print r.text
-    return HttpResponse('<pre>' + r.text + '</pre>')
+    return HttpResponse('<pre>' + r.text + u"貴様"+'</pre>')
 
 @csrf_exempt
 def webhook(request):
@@ -60,7 +59,7 @@ def send_message(recipientID, text):
     url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + ac_token
 
 
-    data_1 = {'recipient': { 'id': recipientID }, 'message': {'text': 'yahoo'} }
+    data_1 = {'recipient': { 'id': recipientID }, 'message': {'text': u'貴様'} }
 
     data_2 = {'recipient': { 'id': recipientID }, 
             "message": {
